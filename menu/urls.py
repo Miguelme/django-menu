@@ -10,7 +10,7 @@ router = routers.DefaultRouter()
 router.register(r'dishes', DishViewSet, basename='dish')
 router.register(r'ingredients', IngredientViewSet, basename='ingredient')
 router.register(r'drinks', DrinkViewSet, basename='drink')
-router.register(r'dessert', DessertViewSet, basename='dessert')
+router.register(r'desserts', DessertViewSet, basename='dessert')
 
 urlpatterns = [
     url(r'^', include(router.urls)),
