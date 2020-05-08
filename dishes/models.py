@@ -1,6 +1,13 @@
 from django.db import models
 
 
+class SpiceLevel(models.TextChoices):
+	NONE = 'NONE', 'None'
+	LOW = 'LOW', 'Low'
+	MEDIUM = 'MED', 'Medium'
+	HIGH = 'HIGH', 'High'
+
+
 class Ingredient(models.Model):
 	id = models.AutoField(primary_key=True)
 	name = models.CharField(max_length=128)
@@ -22,6 +29,11 @@ class PriceableModel(models.Model):
 	isAvailable = models.BooleanField(default=True, verbose_name="Is Available?")
 	ingredients = models.ManyToManyField(Ingredient, blank=True, related_name="%(class)singredients_ingredient")
 	allergens = models.ManyToManyField(Ingredient, blank=True, related_name="%(class)sallergens_ingredients")
+	spiceLevel = models.CharField(
+		max_length=4,
+		choices=SpiceLevel.choices,
+		default=SpiceLevel.NONE
+	)
 
 	def __str__(self):
 		return self.name
