@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from dishes.models import Dish, Desert, Drink, Ingredient
+from dishes.models import Dish, Dessert, Drink, Ingredient
 
 
 class SimpleIngredientSerializer(serializers.ModelSerializer):
@@ -16,10 +16,10 @@ class DishSerializer(serializers.ModelSerializer):
 		fields = '__all__'
 
 
-class DesertSerializer(serializers.ModelSerializer):
+class DessertSerializer(serializers.ModelSerializer):
 	ingredients = SimpleIngredientSerializer(read_only=True, many=True)
 	class Meta:
-		model = Desert
+		model = Dessert
 		fields = '__all__'
 
 

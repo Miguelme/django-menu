@@ -4,13 +4,13 @@ from django.urls import path
 from django.views.generic import RedirectView
 from rest_framework import routers
 
-from dishes.views import DishViewSet, DrinkViewSet, IngredientViewSet, DesertViewSet
+from dishes.views import DishViewSet, DrinkViewSet, IngredientViewSet, DessertViewSet
 
 router = routers.DefaultRouter()
 router.register(r'dishes', DishViewSet, basename='dish')
 router.register(r'ingredients', IngredientViewSet, basename='ingredient')
 router.register(r'drinks', DrinkViewSet, basename='drink')
-router.register(r'desert', DesertViewSet, basename='desert')
+router.register(r'dessert', DessertViewSet, basename='dessert')
 
 urlpatterns = [
     url(r'^', include(router.urls)),

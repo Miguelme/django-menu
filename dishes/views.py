@@ -1,8 +1,8 @@
 from rest_framework import mixins
 from rest_framework.viewsets import GenericViewSet
 
-from dishes.models import Dish, Ingredient, Drink, Desert
-from dishes.serializers import DishSerializer, IngredientSerializer, DrinkSerializer, DesertSerializer
+from dishes.models import Dish, Ingredient, Drink, Dessert
+from dishes.serializers import DishSerializer, IngredientSerializer, DrinkSerializer, DessertSerializer
 
 
 class DishViewSet(GenericViewSet, mixins.RetrieveModelMixin, mixins.ListModelMixin):
@@ -20,6 +20,6 @@ class DrinkViewSet(GenericViewSet, mixins.RetrieveModelMixin, mixins.ListModelMi
     queryset = Drink.objects.all()
 
 
-class DesertViewSet(GenericViewSet, mixins.RetrieveModelMixin, mixins.ListModelMixin):
-    serializer_class = DesertSerializer
-    queryset = Desert.objects.all()
+class DessertViewSet(GenericViewSet, mixins.RetrieveModelMixin, mixins.ListModelMixin):
+    serializer_class = DessertSerializer
+    queryset = Dessert.objects.all()

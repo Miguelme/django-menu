@@ -54,5 +54,5 @@ class Drink(PriceableModel):
 	pass
 
 
-class Desert(PriceableModel):
+class Dessert(PriceableModel):
 	pass
