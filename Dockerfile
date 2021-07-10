@@ -1,4 +1,4 @@
-FROM python:3.7-alpine3.12
+FROM python:3.8.11-slim-buster
 ENV PYTHONUNBUFFERED 1
 ENV PYTHONDONTWRITEBYTECODE 1
 RUN mkdir /code
