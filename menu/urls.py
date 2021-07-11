@@ -1,6 +1,5 @@
 from django.conf.urls import url, include
 from django.contrib import admin
-from django.urls import path
 from django.views.generic import RedirectView
 from rest_framework import routers
 from django.urls import path

@@ -1,0 +1,23 @@
+version: '3.7'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - static_volume:/home/app/web/staticfiles
+    ports:
+      - 8000:8000
+
+  nginx:
+    build: ./nginx
+    volumes:
+      - static_volume:/home/app/web/staticfiles
+    ports:
+      - 1337:80
+    depends_on:
+      - api
+
+volumes:
+  static_volume:
